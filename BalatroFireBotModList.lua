@@ -33,12 +33,13 @@ end
 ]]
 
 local function get_active_mods()
-    local mod_list = "Active mods: "
+    local mod_list = ""
     for a, mod in pairs(SMODS.Mods) do
         if mod.can_load then
             mod_list = mod_list .. a .. " , "
         end
     end
+    mod_list = mod_list:sub(1,-4)
     return mod_list
 end
 
